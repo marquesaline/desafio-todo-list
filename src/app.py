@@ -11,13 +11,12 @@ def create_task():
         task = request.get_json('task')
 
         result = TaskController.create_task(task)
-        print(result)
 
         return jsonify({
-            'status_code': 200,
+            'status_code': 201,
             'message': 'Tarefa criada com sucesso',
             'task': result
-        }), 200
+        }), 201
     
     except Exception as error:
         return jsonify({
